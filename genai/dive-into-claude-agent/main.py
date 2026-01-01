@@ -20,11 +20,14 @@ async def main():
         if isinstance(message, AssistantMessage):
             for block in message.content:
                 if hasattr(block, "text"):
-                    print(block.text)  # Claude's reasoning
+                    # Claude's reasoning
+                    print(block.text)
                 elif hasattr(block, "name"):
-                    print(f"Tool: {block.name}")  # Tool being called
+                    # Tool being called
+                    print(f"Tool: {block.name}")
         elif isinstance(message, ResultMessage):
-            print(f"Done: {message.subtype}")  # Final result
+            # Final result
+            print(f"Done: {message.subtype}")
 
 
 asyncio.run(main())
