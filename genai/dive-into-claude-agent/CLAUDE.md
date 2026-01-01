@@ -22,7 +22,7 @@ source .venv/bin/activate  # On Windows: .venv\Scripts\activate
 
 ### Environment Variables
 
-The project uses a `.env` file for configuration. Key variables:
+The project uses a `.env` file for configuration, which is automatically loaded by `python-dotenv` when the script runs. Key variables:
 
 - `ANTHROPIC_BASE_URL` - API base URL (currently configured for DeepSeek compatibility)
 - `ANTHROPIC_AUTH_TOKEN` - API authentication token
