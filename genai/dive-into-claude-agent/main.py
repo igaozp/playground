@@ -3,6 +3,8 @@ import asyncio
 from claude_agent_sdk import query, ClaudeAgentOptions, AssistantMessage, ResultMessage, ToolUseBlock
 from dotenv import load_dotenv
 
+from todo_tracker import TodoTracker
+
 # Load environment variables from .env file
 load_dotenv()
 
@@ -77,4 +79,5 @@ def log(message):
         print(f"Done: {message.subtype}")
 
 
-asyncio.run(plan())
+todo_tracker = TodoTracker()
+asyncio.run(todo_tracker.track_query("Please put an elephant into a refrigerator with todos"))
